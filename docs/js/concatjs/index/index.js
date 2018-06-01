@@ -203,6 +203,7 @@
                         if (res.status == 0) {
                             var data = res.data[0];
                             //应该默认进来有个根组织ID name
+                            data.orgUnitLevel=2;
                             indexVue.unitId = data.id;
                             indexVue.name = data.orgUnitName;
                             indexVue.childrenListFlag = data.orgUnitLevel > 3 ? true : false;
