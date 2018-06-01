@@ -58,7 +58,7 @@
 
         //获取itemId
         var p1 = new Promise(function (resolve, reject) {
-            T.MyPost('api/query_item_by_pid.json', function (res) {
+            T.MyGet('api/query_item_by_pid.json', function (res) {
                 if (res.isSuccess) {
                     resolve(res.data[0].id);
                 }
@@ -596,7 +596,7 @@
                     //获取当月组织数据
                     getSameMonthData: function () {
                         var _this = this;
-                        T.MyPost(api[3], function (res) {
+                        T.MyGet(api[3], function (res) {
                             //处理达成率小数
                             var reachRate, reachRate2, reachRatePointer, reachRatePointer2;
 
@@ -677,7 +677,7 @@
                             };
                         }
                         T.LdShow();
-                        T.MyPost(_this.api, function (res) {
+                        T.MyGet(_this.api, function (res) {
                             _this.count = 0;
                             T.LdHide();
                             if (res.isSuccess) {

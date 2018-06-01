@@ -609,7 +609,7 @@
                 getData: function (type) {
                     var that = this;
                     T.LdShow();
-                    T.MyPost('api/query_profit_by_unit.json', function (res) {
+                    T.MyGet('api/query_profit_by_unit.json', function (res) {
                         T.LdHide();
                         var data = res.data;
                         if (res.status === 0) {
@@ -640,7 +640,7 @@
                 //获取时间维度数据
                 getTimeData: function (type) {
                     var that = this;
-                    T.MyPost('api/query_profit_by_time.json', function (res) {
+                    T.MyGet('api/query_profit_by_time.json', function (res) {
                         var data = res.data;
                         if (res.status === 0) {
                             //图表数据
@@ -669,7 +669,7 @@
                 },
                 //获取当月组织数据
                 getProfitData: function () {
-                    T.MyPost('api/query_profit.json', function (res) {
+                    T.MyGet('api/query_profit.json', function (res) {
                         var data = res.data;
 
                         //处理达成率小数

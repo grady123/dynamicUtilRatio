@@ -73,7 +73,7 @@
                         "itemId": _this.itemId2,
                         "type": _this.monthYear
                     };
-                    T.MyPost(_this.api, function (res) {
+                    T.MyGet(_this.api, function (res) {
                         if (res.isSuccess) {
                             _this.itemList = [];
                             if (!res.data.itemList || !res.data.itemList.length) {

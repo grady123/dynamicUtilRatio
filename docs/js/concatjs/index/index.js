@@ -10,7 +10,7 @@
     var useObj = T.GetSearch();
     //判断是url是否带有登录信息，如有，走登录流程
     if (useObj.loginNo) {
-        T.MyPost('/nets-platform-uum-api/api/user/login', function (d) {
+        T.MyGet('/nets-platform-uum-api/api/user/login', function (d) {
             localStorage.removeItem("sysUserInfo");
             if (d.status === 0) {
                 localStorage.setItem('sysUserInfo', JSON.stringify(d.data));
