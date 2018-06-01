@@ -1,0 +1,53 @@
+<div class="fixed-warp" id="business_data_temp">
+    <div class="fixed-top">
+        <div class="mobile-top-nag">
+            <div class="nag-button">
+                <!--返回上一页-->
+                <i class="iconfont icon-fanhui"  @click.stop='goBack'></i>
+                <a href="/index/index.html"><i class="iconfont icon-guanbi"></i></a>
+            </div>
+            业务数据
+        </div>
+    </div>
+
+    <div class="business-data-box">
+        <div id="bbbb" style="width:7.5rem; overflow:auto; background:#fff; border-bottom:1px solid #DDDEE3; padding-left:0.3rem; box-sizing:border-box;">
+            <ul class="top-title" id="top_title">
+                <li v-for="(item,index) in arr" :key="index" :class="{'active':index === arr.length-1}">
+                    <span v-text="item">新城物业</span>
+                    <i class="fs20 mlr22 iconfont icon-xiangyou">
+
+                    </i>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="title-genre clearfix">
+                <span class="fl fs29" v-text="listTitle.monthYear">本年</span>
+                <span class="fr fs20 c-bbb">单位:万元</span>
+            </div>
+
+            <div class="list">
+                <!--表格头部-->
+                <div class="list-title h70 clearfix">
+                    <span class="w-37 fl" v-text="listTitle.title.name">收入科目</span>
+                    <span class="w-21 fl" v-text="listTitle.title.target">目标</span>
+                    <span class="w-21 fl" v-text="listTitle.title.reach">达成</span>
+                    <span class="w-21 fl" v-text="listTitle.title.reachRate">成功率</span>
+                </div>
+                <!--表格数据-->
+                <ul>
+                    <li class="h70 fs24" v-for="(item,index) in itemList" :key="index" @click="tabStore(item.itemId,item.itemName,item.last)">
+                        <span class="w-37 fl no-line" v-text="item.itemName" :class="{'on':!item.last}"></span>
+                        <span class="w-21 fl no-line" v-text="item.target"></span>
+                        <span class="w-21 fl no-line" v-text="item.reach"></span>
+                        <span class="w-21 fl no-line" v-text="item.reachRate+'%'"></span>
+                    </li>
+                </ul>
+                <div v-if="itemList.length===0" class="text-center bus-text">目前还没有科目哦</div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

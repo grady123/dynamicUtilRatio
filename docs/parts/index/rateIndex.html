@@ -1,0 +1,155 @@
+<div class="fixed-warp" id="rateIndex">
+        <div class="fixed-top">
+            <div class="mobile-top-nag">
+            <div class="nag-button">
+            	<!--返回上一页-->
+                <i class="iconfont icon-fanhui"  @click.stop='goBack'></i>
+                <a href="/index/index.html"><i class="iconfont icon-guanbi"></i></a>
+            </div>
+                动态经营利润率
+            </div>
+        </div>
+        <div class="fixed" v-bind:class="{'pb0':childrenListFlag}">
+            <div class="engerAngWrap">
+                <!-- 分类 -->
+                <div class="top-nav" ref="topNav">
+                    <div class="button active" @click.stop='topNavUpDate'><span>经营利润</span></div>
+                    <div class="button" @click="goInCome"><span>收入</span></div>
+                    <div class="button" @click="goPay"><span>支出</span></div>
+                </div>
+                <div class="energy-head">
+                    <div class="pt15 pb15 energy-head  banner-active0">
+                        <!-- 地区项目选择  -->
+                        <div class="clearfix" v-on:click="selChange">
+                            <ul class="fr banner-title-wrapper">
+                                <li class="fl on">
+                                    <span class="light fs28 mr10 datename no-line unitName-style" v-text="name">新城物业</span>
+                                    <i class=" iconfont icon-iconfontunfold light"></i>
+                                </li>
+                                <li class="fr">
+                                    <span class="light fs28 datename" v-text="accountPeriod">9月12日</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clearfix midle mt96">
+                            <ul class="fr pr">
+                                <li class="fl">
+                                    <ul class="clearfix">
+                                        <li class="fl light pr">
+                                            <span class="mr10 big-number" v-text="reachRate1">20</span>
+                                            <span class="fs38 mr16 lv pa" v-if="reachRate2">%</span>
+                                            <span class="fs84 mr16" v-text="reachRate2"></span>
+                                            <span class="fs26">经营利润达成率</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix two-tabs">
+                        <ul class="W100 clearfix midle-tabs">
+                            <li class="fl W-50 text-center pt10 box-size-border sub-banner-active0">
+                                <p class="fs32 light text-center top-p mb0" v-text="target">140</p>
+                                <p class="fs24 c-fffde3 text-center top-b mb0" >累计经营利润目标(万元)</p>
+                            </li>
+                            <li class="fl W-50 text-center pt10 box-size-border sub-banner-active0">
+                                <p class="fs32 light text-center top-p mb0" v-text="reach">-14.3</p>
+                                <p class="fs24 c-fffde3 text-center top-b mb0" >累计经营利润达成(万元)</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="time-dimension clearfix list p40 mb0 light-bg" v-if="bottomFlag==0">
+                        <div class="fl W-50 b0"><span class="tab fs26" :class="{'active':monthYear==1}" @click="tabStore(1)">本月</span></div>
+                        <div class="fl W-50 b0"><span class="tab fs26" :class="{'active':monthYear==2}" @click="tabStore(2)">本年</span></div>
+                    </div>
+                    <div class="time-dimension clearfix list p40 mb0 light-bg" v-if="bottomFlag==1">
+                        <div class="fl W-50 b0"><span class="tab fs26" :class="{'active':monthTotal==1}" @click="tabStore2(1)">分月</span></div>
+                        <div class="fl W-50 b0"><span class="tab fs26" :class="{'active':monthTotal==2}" @click="tabStore2(2)">累计</span></div>
+                    </div>
+                    <div class="time-dimension clearfix list p40 mb0 light-bg" v-if="bottomFlag==3">
+                        <div class="fl W-50 b0"><span class="tab fs26" :class="{'active':monthTotal==1}" @click="tabStore2(1)">分月</span></div>
+                        <div class="fl W-50 b0"><span class="tab fs26" :class="{'active':monthTotal==2}" @click="tabStore2(2)">累计</span></div>
+                    </div>
+                    <!--图表开始-->
+                	<div class="charts" id="nhCharts2"></div>
+                    <!--图表结束-->
+                    
+                    <!--图表下面的线条开始-->
+                   <!-- <div class="line clearfix">
+                    	<span class="fl W-50" :class="{'active':monthYear==1}"></span>
+                    	<span class="fl W-50" :class="{'active':monthYear==2}"></span>
+                    </div>-->
+                    <!--图表下面的线条结束-->
+                    <templete v-show="bottomFlag==0">
+                        <div class="clearfix  pt30  pb20 mb0 light-bg text-center bbDDDEE3" >
+                            <div class="fl W-20 b0 c-3395FF fs26">&nbsp;</div>
+                            <div class="fl W-20 b0 c-000 fs26">组织</div>
+                            <div class="fl W-20 b0 c-000 fs26">目标</div>
+                            <div class="fl W-20 b0 c-000 fs26">达成</div>
+                            <div class="fl W-20 b0 c-000 fs26 c-3395FF" v-on:click="rateOrderFunc(rateOrder)">达成率<i class="iconfont  fs14 rotate" v-bind:class="{'icon-jiantou':rateOrder==2,'icon-xiangxiajiantou':rateOrder==1}"></i></div>
+                        </div>
+                        <ul>
+                            <li class="h70 lh70 text-center bt0 bl0 br0 m0 bbDDDEE3" v-for="(item,index) in unitList" :key="index+1" v-if="index < bottomBtnData.len">
+                                <div class="fl lh70 W-20 fs26 text-center">{{index+1}}</div>
+                                <div class="fl lh70 W-20 fs26 c-3395FF no-line" v-text="item.unitName" @click="orgNext(item)"></div>
+                                <div class="fl lh70 W-20 fs26 text-center" >{{item.target | decimalFiter(2)}}</div>
+                                <div class="fl lh70 W-20 fs26 text-center" >{{item.reach | decimalFiter(2)}}</div>
+                                <div class="fl lh70 W-20 fs26 text-center" >{{item.reachRate | decimalFiter(1)}}%</div>
+                            </li>
+                        </ul>
+                    </templete>
+
+                    <!--图表下面的线条结束-->
+                    <templete v-show="bottomFlag==1">
+                        <div class="clearfix  pt30  pb20 mb0 light-bg text-center bbDDDEE3" >
+                            <div class="fl W-25 b0 c-000 fs26">月份</div>
+                            <div class="fl W-25 b0 c-000 fs26">目标</div>
+                            <div class="fl W-25 b0 c-000 fs26">达成</div>
+                            <div class="fl W-25 b0 c-000 fs26">达成率</div>
+                        </div>
+                        <ul>
+                            <li class="h70 lh70 text-center bt0 bl0 br0 m0 bbDDDEE3" v-for="(item,index) in unitList" :key="index+1" v-if="index < bottomBtnData.len">
+                                <div class="fl lh70 W-25 fs26 " v-text="item.month"></div>
+                                <div class="fl lh70 W-25 fs26 " >{{item.target | decimalFiter(2)}}</div>
+                                <div class="fl lh70 W-25 fs26 " >{{item.reach | decimalFiter(2)}}</div>
+                                <div class="fl lh70 W-25 fs26 ">{{item.reachRate | decimalFiter(1)}}%</div>
+                            </li>
+                        </ul>
+                    </templete>
+                    <templete v-show="bottomFlag==3">
+                        <div class="clearfix  pt30  pb20 mb0 light-bg text-center bbDDDEE3" >
+                            <div class="fl W-25 b0 c-000 fs26">月份</div>
+                            <div class="fl W-25 b0 c-000 fs26">目标</div>
+                            <div class="fl W-25 b0 c-000 fs26">达成</div>
+                            <div class="fl W-25 b0 c-000 fs26">达成率</div>
+                        </div>
+                        <ul>
+                            <li class="h70 lh70 text-center bt0 bl0 br0 m0 bbDDDEE3" v-for="(item,index) in unitList" :key="index+1" v-if="index < bottomBtnData.len">
+                                <div class="fl lh70 W-25 fs26 " v-text="item.month"></div>
+                                <div class="fl lh70 W-25 fs26 " >{{item.target | decimalFiter(2)}}</div>
+                                <div class="fl lh70 W-25 fs26 " >{{item.reach | decimalFiter(2)}}</div>
+                                <div class="fl lh70 W-25 fs26 ">{{item.reachRate | decimalFiter(1)}}%</div>
+                            </li>
+                        </ul>
+                    </templete>
+                	<!--点击展开与收缩列表开始-->
+                	<div class="bottom-btn w-100 c-3395FF" @click.stop="accordion()" v-if="unitList.length > 12">
+                		<span v-text="bottomBtnData.text"></span>
+                		<!--<span v-text="bottomBtnData.iconClass"></span>-->
+                		<span  class="iconfont fs18 icon-zhankaiquanbu" :class="{'rotate':!bottomBtnData.bSign}"></span>
+                	</div>
+                    <div class="bottom-btn w-100 c-3395FF"  v-if="unitList.length ==0">
+                       <p class="text-center m20">无列表数据</p>
+                    </div>
+                	<!--点击展开与收缩列表结束-->
+                </div>
+            </div>
+        </div>
+        <div class="fixed-bottom" v-if="!childrenListFlag">
+            <div class="bot-nav">
+                <div class="button W-50" :class="{'active':bottomFlag==0}" @click="buttonTab(0)"><i class="iconfont icon-xuanfutubiao-zuzhi fs29 mr20"></i>组织</div>
+                <div class="button W-50" :class="{'active':bottomFlag==1}" @click="buttonTab(1)"><i class="iconfont icon-shijian fs29 mr20"></i>时间</div>
+            </div>
+        </div>
+</div>

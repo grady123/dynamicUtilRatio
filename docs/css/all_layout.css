@@ -1,0 +1,13 @@
+﻿@charset "utf-8";
+/*!*css去空格*/
+/*\s*(\:|\{|;)\s*    $1*/
+/**!*/
+@import url("global.css");
+@import url("iconfont.css");
+@import url("layout.css");
+@import url("common.css");
+@import url("modeTools.css");
+
+@import url("index/index.css");
+@import url("index/BusinessDataTemp.css");
+@import url("index/InComeTemp.css");

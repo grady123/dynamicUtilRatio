@@ -1,0 +1,104 @@
+<!--<div><p>这是我加载进来的在的11111</p><p></p><p id="go">去第2个页面</p></div>-->
+<div class="fixed-warp" id="t_time">
+        <div class="fixed-top"><div class="mobile-top-nag">
+            <div class="nag-button">
+            	<!--返回上一页-->
+                <i class="iconfont icon-fanhui"  @click.stop='goBack'></i>
+                <a href="/index"><i class="iconfont icon-guanbi"></i></a>
+            </div>
+           	 时间页
+        </div>
+        </div>
+        <div class="fixed">
+            <div class="engerAngWrap">
+                <!-- 分类 -->
+                <div class="top-nav" ref="topNav">
+                    <div class="button" @click.stop='topNavUpDate(index,event)' v-for="(val,index) in topNavData" :key="index"><span :class="{'active0':index == 0}" v-text="val"></span></div>
+                    <!--<div class="button"><span>收入</span></div>
+                    <div class="button"><span>支出</span></div>-->
+                </div>
+                <!-- 地区项目选择  -->
+
+                <div class="energy-head" v-if="two">
+                    <div class="pt15 pb15 energy-head" :class="bannerActive.active">
+                        <div class="clearfix">
+                            <ul class="fr">
+                                <li class="fl"><span class="light fs28 mr10 datename" v-text="name">新城物业</span><i class=" iconfont icon-iconfontunfold light mr140"></i></li>
+                                <li class="fl"><span class="light fs28 datename">9月12日</span></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix midle mt96">
+                            <ul class="fr pr">
+                                <li class="fl">
+                                    <ul class="clearfix">
+                                        <li class="fl light pr">
+                                            <span class="mr10 big-number">20</span>
+                                            <span class="fs38 mr16 lv pa">%</span>
+                                            <span class="fs84 mr16">.5</span>
+                                            <span class="fs26">经营利润达成率</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clearfix two-tabs">
+                        <ul class="W100 clearfix midle-tabs">
+                            <li class="fl W-50 text-center pt10 box-size-border" :class="bannerActive.active2">
+                                <p class="fs32 light text-center top-p mb0">140</p>
+                                <p class="fs24 c-fffde3 text-center top-b mb0">预算（万元）</p>
+                            </li>
+                            <li class="fl W-50 text-center pt10 box-size-border" :class="bannerActive.active2">
+                                <p class="fs32 light text-center top-p mb0">-14.3</p>
+                                <p class="fs24 c-fffde3 text-center top-b mb0">实际支出（万元）</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="time-dimension clearfix list p40 mb0 light-bg" v-if="two">
+                        <div class="fl W-50 b0"><span class="tab fs26" :class="{'active':myIndex==0}" @click.stop="tabStore(0)">本月</span></div>
+                        <div class="fl W-50 b0"><span class="tab fs26" :class="{'active':myIndex==1}" @click.stop.click="tabStore(1)">本年</span></div>
+                    </div>
+                    <!--图表开始-->
+                	<div class="charts" id="nhCharts2"></div>
+                    <!--图表结束-->
+                    
+                    <!--图表下面的线条开始-->
+                    <div class="line clearfix">
+                    	<span class="fl W-50" :class="{'active':myIndex==0}"></span>
+                    	<span class="fl W-50" :class="{'active':myIndex==1}"></span>
+                    </div>
+                    <!--图表下面的线条结束-->
+                    <div class="clearfix  pt30  pb20 mb0 light-bg text-center bbDDDEE3" v-if="two">
+                        <div class="fl W-20 b0 c-3395FF fs26">排名<i class="ion-arrow-down-c ml10 c-3395FF fs26"></i></div>
+                        <div class="fl W-20 b0 c-000 fs26">分公司</div>
+                        <div class="fl W-20 b0 c-000 fs26">预算</div>
+                        <div class="fl W-20 b0 c-000 fs26">实际</div>
+                        <div class="fl W-20 b0 c-000 fs26">使用率(%)</div>
+                    </div>
+                    <ul v-if="two">
+                        <li class="h70 lh70 text-center bt0 bl0 br0 bbDDDEE3 m0" v-for="(item,index) in tableData" :key="index" v-if="index < bottomBtnData.len">
+                            <div class="fl lh70 W-20 fs26" v-text="item.ranking"></div>
+                            <div class="fl lh70 W-20 fs26 c-3395FF" v-text="item.tissues"></div>
+                            <div class="fl lh70 W-20 fs26" v-text="item.aim"></div>
+                            <div class="fl lh70 W-20 fs26" v-text="item.reach"></div>
+                            <div class="fl lh70 W-20 fs26" v-text="item.rate"></div>
+                        </li>
+                    </ul>
+                	<!--点击展开与收缩列表开始-->
+                	<div class="bottom-btn w-100 c-3395FF" @click.stop="accordion()">
+                		<span v-text="bottomBtnData.text"></span>
+                		<span v-text="bottomBtnData.iconClass"></span>
+                	</div>
+                	<!--点击展开与收缩列表结束-->
+                </div>
+            </div>
+        </div>
+        <div class="fixed-bottom" style="background-color:#E7CF2E">
+
+            <div class="bot-nav">
+                <div class="button W-33" ref="go_group"><i class="iconfont icon-xuanfutubiao-zuzhi fs29 mr20"></i>组织</div>
+                <div class="button W-33 active"><i class="iconfont icon-shijian fs29 mr20"></i>时间</div>
+                <div class="button W-33" ref="go_business"><i class="iconfont icon-yewu fs29 mr20"></i>业务</div>
+            </div>
+        </div>
+</div>

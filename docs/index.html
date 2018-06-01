@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="imagemode" content="force"/>
+<meta name="wap-font-scale" content="no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script>
+function rem(n){
+	var r=document.documentElement.clientWidth;
+	document.documentElement.style.fontSize=(r*100/(375*n))+'px';
+}
+rem(2);
+/*按375标准，如果设计稿是750，那么倍率是2,测量是20px,那么写样式时就写0.2rem*/
+</script>
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/all_layout.css">
+</head>
+<body>
+<div id="data-warp">
+<!--每个挂载点最好加上class body-data 首个挂载点加上show-banna-->
+  <!-- 首页界面   T.GoPage(0);-->
+  <div id="my_index" class="body-data show-banna"></div>
+  <!--首页界面--动态利用率    T.GoPage(1);-->
+  <div id="dt" class="body-data"></div>
+  <!--收入  T.GoPage(2);-->
+  <div id="dt1" class="body-data"></div>
+  <!-- 支出 T.GoPage(3);-->
+  <div id="dt2" class="body-data"></div>
+  <!-- 我是动态利用率最末节点的数据  T.GoPage(4)-->
+  <div id="dt3" class="body-data"></div>
+  <!--业务数据页   T.GoPage(5)-->
+  <div id="dt4" class="body-data"></div>
+  <!-- 项目选择器  -->
+  <div class="body-data" id="projectSelect"></div>
+</div>
+<!--loading及提示的dom-->
+<div class="all-bom-warp" id="all-bom-warp">
+  <div class="loading" id="loading">
+    <div class="spinner">
+      <div class="spinner-container container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="spinner-container container2">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="spinner-container container3">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="vue-bomb-warp" id="vue-bom-warp">
+    <div id="all-loading-tip" class="all-loading-tip">{{tip}}
+    </div>
+    <div class="bom-selec-tip-warp" id="bom-selec-tip-warp"><div class="bom-postion"><div class="bom-selec-tip">{{selecTip}}</div><div class="bom-selec-button"><span v-on:click="cc()">取消</span><span v-on:click="cf(this)">确定</span></div></div></div></div>
+</div>
+</body>
+<script type="text/javascript" src="./js/minjs/Zepto.js"></script>
+<script type="text/javascript" src="./js/minjs/vue.min.js"></script>
+<script type="text/javascript" src="./js/minjs/echarts.common.min.js"></script>
+<!-- build:js js/concatjs/default.js-->
+<script type="text/javascript" src="./js/concatjs/a/global.js"></script>
+<script type="text/javascript" src="./js/concatjs/index/index.js"></script>
+<script type="text/javascript" src="./js/concatjs/index/rateIndex.js"></script>
+<!--<script type="text/javascript" src="./js/concatjs/index/BusinessDataTemp.js"></script>-->
+<script type="text/javascript" src="./js/concatjs/index/projectSelect.js"></script>
+<!--收入页-->
+<script type="text/javascript" src="./js/concatjs/index/InComeTemp.js"></script>
+<!--支出页-->
+<script type="text/javascript" src="./js/concatjs/index/PayTemp.js"></script>
+<!---->
+<script type="text/javascript" src="./js/concatjs/index/BusinessDataTemp.js"></script>
+<!-- endbuild -->
+</html>

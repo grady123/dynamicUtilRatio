@@ -1,0 +1,105 @@
+{
+    "isSuccess": true,
+    "status": 0,
+    "message": null,
+    "data": {
+        "accountPeriod": "06月01日",
+        "unitId": 2068,
+        "unitName": null,
+        "last": true,
+        "profitRate":10,
+        "target": 470,
+        "reach": 760,
+        "reachRate": 4520,
+        "trendList": [
+            {
+                "month": "1月",
+                "profitRate":125,
+                "target": 760,
+                "reach": 760,
+                "reachRate": 560
+            },
+            {
+                "month": "2月",
+                "profitRate": 542,
+                "target": 760,
+                "reach": 760,
+                "reachRate":670
+            },
+            {
+                "month": "3月",
+                "profitRate":635,
+                "target": 340,
+                "reach": 5460,
+                "reachRate": 540
+            },
+            {
+                "month": "4月",
+                "profitRate": 380,
+                "target": 3032,
+                "reach": 320,
+                "reachRate": 0
+            },
+            {
+                "month": "5月",
+                "profitRate": 250,
+                "target": 23,
+                "reach": 32,
+                "reachRate": 0
+            },
+            {
+                "month": "6月",
+                "profitRate": 755,
+                "target": 640,
+                "reach": 540,
+                "reachRate": 6540
+            },
+            {
+                "month": "7月",
+                "profitRate": 23,
+                "target": 213,
+                "reach": 32,
+                "reachRate": 123
+            },
+            {
+                "month": "8月",
+                "profitRate": 300,
+                "target": 52,
+                "reach":500,
+                "reachRate": 250
+            },
+            {
+                "month": "9月",
+                "profitRate": 20,
+                "target": 4560,
+                "reach": 560,
+                "reachRate": 650
+            },
+            {
+                "month": "10月",
+                "profitRate": 500,
+                "target": 25,
+                "reach": 650,
+                "reachRate": 40
+            },
+            {
+                "month": "11月",
+                "profitRate": 100,
+                "target": 4350,
+                "reach": 5430,
+                "reachRate": 530
+            },
+            {
+                "month": "12月",
+                "profitRate": 52,
+                "target": 58,
+                "reach": 5430,
+                "reachRate": 50
+            }
+        ],
+        "income": 323,
+        "incomeIndex": 678,
+        "pay": 678,
+        "payIndex": 787
+    }
+}

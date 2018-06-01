@@ -1,0 +1,37 @@
+{
+    "isSuccess": true,
+    "status": 0,
+    "message": null,
+    "data": [
+        {
+            "id": 1711,
+            "pid": 0,
+            "year": "2018",
+            "name": "收入",
+            "pcode": null,
+            "code": "YS6001",
+            "type": "0",
+            "reduceItem": null,
+            "controlWay": null,
+            "weight": null,
+            "nodePath": "0,1711",
+            "property": "1",
+            "rateControl": null,
+            "toBillType": null,
+            "controlType": "1",
+            "remark": null,
+            "status": "1",
+            "createby": 1,
+            "createbyName": "管理员",
+            "createDate": 1494037666000,
+            "updateby": 1,
+            "updatebyName": "管理员",
+            "updateDate": 1494040681000,
+            "delFlag": 0,
+            "idEx": "2017050600001",
+            "pidEx": "2017050600001",
+            "orderNo": 1,
+            "statisticsCount": 0
+        }
+    ]
+}

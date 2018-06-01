@@ -1,0 +1,20 @@
+{
+    "isSuccess": true,
+    "status": 0,
+    "message": null,
+    "data": {
+        "accountPeriod": "05月31日",
+        "unitId": 1179,
+        "unitName": null,
+        "level": null,
+        "last": false,
+        "month": null,
+        "target": -30368.145268,
+        "reach": 14640.3342694,
+        "reachRate": 248.20951079,
+        "income": 0,
+        "pay": 0,
+        "unitList": null,
+        "timeList": null
+    }
+}

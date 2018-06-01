@@ -1,0 +1,110 @@
+<div id="box" class="fixed-warp">
+	<div class="fixed-top">
+		<div class="mobile-top-nag">
+        <div class="nag-button">
+        	<!--返回上一页-->
+			<i class="iconfont icon-fanhui"  @click.stop='goBack'></i>
+			<a href="/index/index.html"><i class="iconfont icon-guanbi"></i></a>
+		</div>
+       	 动态经营利润率
+       	</div>
+    </div>
+	<div class="my-main">
+		<!--banner-->
+		<div class="energy-head">
+             <div class="pt15 pb15 my-banner">
+             	<!--banner-title-->
+				<div class="clearfix">
+					<ul class="fr mt10">
+						<li class="fl on" v-on:click="selChange">
+							<span class="light fs28 mr10 datename no-line unitName-style" v-text="name">新城物业</span>
+							<i class=" iconfont icon-iconfontunfold light mr30"></i>
+						</li>
+						<li class="fr">
+							<span class="light fs28 datename" v-text="accountPeriod">9月12日</span>
+						</li>
+					</ul>
+				</div>
+				<!--banner主体-->
+				<div class="clearfix midle mt30">
+					<ul class="fr pr mr20">
+						<li class="fl">
+							<ul class="clearfix">
+								<li class="fl light pr">
+									<span class="fs26 mr30">截至昨天</span>
+									<span class="mr10 big-number" v-text="profitRate">20</span>
+									<span class="fs38 mr16 pa ap-tr" v-show="profitRate!=0">%</span>
+									<span class="fs84 mr16">{{profitRatePointer}}&nbsp;</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="my-banner-list fr fs24">
+						<ul>
+							<li>
+								<span class="fl">累计经营利润达成(万元)</span>
+								<span class="fr" v-text="reach">200</span>
+							</li>
+							<li>
+								<span class="fl">累计收入达成(万元)</span>
+								<span class="fr" v-text="income">200</span>
+							</li>
+							<!-- <li>
+								<span class="fl">达成率(%)</span>
+								<span class="fr" v-if="reachRate == 0 ">0</span>
+								<span class="fr" v-else>{{reachRate}}%</span>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<!--图表-->
+		<div class="my-box" >
+			<div class="ehcarts-title">
+				<span class="index-icon">
+					<i class="iconfont icon-tubiaotongji fs16  bc-8FBEF0 c-fff"></i>
+				</span>
+
+				<span>走势</span>
+			</div>
+			<div class="my-echarts" id="my_echarts"></div>
+		</div>
+		<!--进度条-->
+		<div class="my-box mt20">
+			<div class="ehcarts-title">
+				<span class="index-icon">
+					<i class="iconfont icon-jindu fs16 bc-8FBEF0 c-fff"></i>
+				</span>
+				<span>本年</span>
+				<p class="fr mr30">单位：万元</p>
+			</div>
+			<div class="this-year-count">
+				<ul>
+					<li>
+						<span class="name fl">收入</span>
+						<div class="fl">
+							<p class="income">
+								<span class="current" v-text="income">72</span>
+							</p>
+							<span class="sum" v-text="incomeIndex">2400</span>
+						</div>
+					</li>
+					<li>
+						<span class="name fl">支出</span>
+						<div class="fl">
+							<p class="active pay" style="width:4rem;">
+								<span class="current" v-text="pay">92</span>
+							</p>
+							<span class="sum" v-text="payIndex">9400</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--向上滑动跳转页面-->
+		<div :style="{'width':'100%','height':'2rem','position':'fixed','bottom':0,'left':0,'opacity':'0'}" id="index_slide"></div>
+	</div>
+	
+</div>

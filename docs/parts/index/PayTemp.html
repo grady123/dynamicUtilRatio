@@ -1,0 +1,118 @@
+<div class="fixed-warp in-come-temp" id="pay_temp">
+    <div class="fixed-top"><div class="mobile-top-nag">
+        <div class="nag-button">
+            <!--返回上一页-->
+            <i class="iconfont icon-fanhui"  @click.stop='goBack'></i>
+            <a href="/index/index.html"><i class="iconfont icon-guanbi"></i></a>
+        </div>
+        动态经营利润率
+    </div>
+    </div>
+    <div class="fixed">
+        <div class="engerAngWrap">
+            <!-- 分类 -->
+            <div class="top-nav">
+                <div class="button" @click="goTateIndex"><span>经营利润</span></div>
+                <div class="button" @click="goInCome"><span>收入</span></div>
+                <div class="button"><span class="active2">支出</span></div>
+            </div>
+            <!-- 地区项目选择  -->
+
+            <div class="energy-head">
+                <div class="pt15 pb15 energy-head banner-active2">
+                    <div class="clearfix">
+                        <ul class="fr banner-title-wrapper">
+                            <li class="fl on" @click="selChange">
+                                <span class="light fs28 mr10 datename no-line unitName-style" v-text="name">新城物业</span>
+                                <i class=" iconfont icon-iconfontunfold light"></i>
+                            </li>
+                            <li class="fr">
+                                <span class="light fs28 datename" v-text="sameMonthData.accountPeriod"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix midle mt96">
+                        <ul class="fr pr">
+                            <li class="fl">
+                                <ul class="clearfix">
+                                    <li class="fl light pr">
+                                        <span class="mr10 big-number" v-text="sameMonthData.reachRate">20</span>
+                                        <span class="fs38 mr16 pa lr" v-if="bRate">%</span>
+                                        <span class="fs84 mr16" v-text="sameMonthData.reachRatePointer">.5</span>
+                                        <span class="fs26">支出使用率</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix two-tabs">
+                    <ul class="W100 clearfix midle-tabs">
+                        <li class="fl W-50 text-center pt10 box-size-border sub-banner-active2">
+                            <p class="fs32 light text-center top-p mb0"  v-text="sameMonthData.target">140</p>
+                            <p class="fs24 c-fffde3 text-center top-b mb0">年预算总额（万元）</p>
+                        </li>
+                        <li class="fl W-50 text-center pt10 box-size-border sub-banner-active2">
+                            <p class="fs32 light text-center top-p mb0" v-text="sameMonthData.reach">-14.3</p>
+                            <p class="fs24 c-fffde3 text-center top-b mb0">累计冻结及已用（万元）</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="time-dimension clearfix list p40 mb0 light-bg">
+                    <!--本月   本年  按钮-->
+                    <div class="fl W-50 b0" v-for="(val,index) in inComeListState.arr">
+                        <span class="tab fs26" :class="{'active':index === myIndex}" @click.stop="tabStore(index)" v-text="val"></span>
+                    </div>
+                </div>
+                <!--图表开始-->
+                <div class="pay_nhCharts-box" id="pay_nhCharts-box">
+                    <div class="charts1" id="pay_nhCharts"></div>
+                </div>
+                <!--图表结束-->
+
+                <div class="clearfix  pt30  pb20 mb0 light-bg text-center bbDDDEE3">
+                    <div class="W-20 h-1 fl" v-if="inComeListState.bHide"></div>
+                    <div class="fl W-20 b0 c-000 fs26" @click="rate_order(index)" :class="{'W-25':!inComeListState.bHide,'c-3395FF':index === inComeListState.titleData.length-1&&inComeListState.bHide}" v-for="(val,index) in inComeListState.titleData" :key="index">
+                        <span v-text="val"></span>
+                        <i class="iconfont icon-jiantou rotate fs14 pos-t" :class="{'iblock':rateOrder===1}" v-if="index === inComeListState.titleData.length-1 && inComeListState.bHide"></i>
+                    </div>
+                </div>
+                <ul :style="{'transition':'all 1s'}">
+                    <li class="h70 lh70 text-center bt0 bl0 br0 bbDDDEE3 m0" @click="tabIdStore(item.id,item.itemId,item.name,item.last,item.level)" v-for="(item,index) in inComeList" :key="index" v-if="index < bottomBtnData.len">
+                        <div class="fl lh70 W-20 fs26 no-line" v-if="inComeListState.bHide" v-text="index+1"></div>
+                        <div class="fl lh70 W-20 fs26 no-line" :class="{'text-left':bottomFlag===0,'c-3395FF':inComeListState.c_3395FF,'W-25':!inComeListState.bHide,'business-on':bottomFlag===2}" v-text="item.name"></div>
+                        <div class="fl lh70 W-20 fs26 no-line" :class="{'W-25':!inComeListState.bHide}" v-text="item.target"></div>
+                        <div class="fl lh70 W-20 fs26 no-line" :class="{'W-25':!inComeListState.bHide}" v-text="item.reach"></div>
+                        <div class="fl lh70 W-20 fs26 no-line" :class="{'W-25':!inComeListState.bHide}" v-text="item.reachRate+'%'"></div>
+                    </li>
+                </ul>
+                <!--点击展开与收缩列表开始-->
+                <div class="bottom-btn w-100 c-3395FF" @click.stop="accordion()" v-if="inComeList.length>12">
+                    <span v-text="bottomBtnData.text" class="fs24"></span>
+                    <span  class="iconfont fs18 icon-zhankaiquanbu"  :class="{'rotate':!bottomBtnData.bSign}"></span>
+                </div>
+                <!--点击展开与收缩列表结束-->
+                <div class="bottom-btn w-100 c-3395FF"  v-if="inComeList.length ==0">
+                    <p class="text-center m20">无列表数据</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-bottom">
+        <div class="bot-nav">
+            <div class="button W-33" :class="{'active':bottomFlag === 0}" @click="tabNavStore(0)" v-if="!childrenListFlag">
+                <i class="iconfont icon-xuanfutubiao-zuzhi fs29 mr20"></i>
+                组织
+            </div>
+            <div class="button W-33" :class="{'active':bottomFlag === 1,'W-50':childrenListFlag}" @click="tabNavStore(1)">
+                <i class="iconfont icon-shijian fs29 mr20"></i>
+                时间
+            </div>
+            <div class="button W-33" :class="{'active':bottomFlag === 2,'W-50':childrenListFlag}" @click="tabNavStore(2)">
+                <i class="iconfont icon-yewu fs29 mr20"></i>
+                业务
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="fixed-warp" id="selBody" style="display:none;">
+    <div class="fixed-top">
+        <div class="fixed-top">
+            <div class="mobile-top-nag">
+                <div class="nag-button"><i class="iconfont icon-fanhui go1" v-on:click="goBack"></i></div>
+                {{nowProject}}</div>
+        </div>
+    </div>
+    <!-- 地区项目选择  -->
+    <div class="fixed">
+        <div class="item-select">
+            <ul>
+                <li>
+                    <div class="searchBox">
+                        <div class="inputBox"><span><i class="iconfont icon-sousuo"></i></span><input type="text" v-model="keys"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-cont item-active"><p><span v-on:click="cutList(index)" v-for="(d,index) in navGroupName">{{d.name}}<i class="iconfont icon-xiangyou"></i></span></p></div>
+                </li>
+                <li class="li-item" v-for="(i,index) in nameList">
+                    <div class="item-cont" v-show="searchShow(index)">
+                        <i style="text-align: center;margin-right: 0.05rem" v-on:click="getProject(index)"   class="iconfont fl icon-yuanquan icon-on" ></i>
+                        <span class="on" v-on:click="if(i.max > 0){groupAdd(index)}">{{i.name}}</span>
+                        <i v-if="i.max > 0" v-on:click="groupAdd(index)" class="iconfont fr icon-xiangyou icon-on" ></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

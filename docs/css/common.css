@@ -1,0 +1,423 @@
+
+.body-data{-webkit-overflow-scrolling:none}
+input[type=search],input[type=text],input[type=password]{line-height:normal}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#c7c7c7}
+/*公共margin*/
+.ma{margin: auto!important;}
+.m0{margin:0 !important}
+.m5{margin:0.05rem !important}
+.m10{margin:.10rem !important}
+.m15{margin:.15rem !important}
+.m20{margin:.20rem !important}
+.m30{margin:.30rem !important}
+.mt0{margin-top:0 !important}
+.mt5{margin-top:.05rem !important}
+.mt7{margin-top:.07rem !important}
+.mt10{margin-top:.10rem !important}
+.mt14{margin-top:.14rem !important}
+.mt15{margin-top:.15rem !important}
+.mt20{margin-top:.20rem !important}
+.mt30{margin-top:.30rem !important}
+.mt60{margin-top:.60rem !important}
+.mt48{margin-top:.48rem !important}
+.mt96{margin-top:.96rem !important}
+.mr0{margin-right:0 !important}
+.mr5{margin-right:.05rem !important}
+.mr6{margin-right:.06rem !important}
+.mr12{margin-right:.12rem !important}
+.mr10{margin-right:.10rem !important}
+.mr15{margin-right:.15rem !important}
+.mr16{margin-right:.16rem !important}
+.mr20{margin-right:.20rem !important}
+.mr30{margin-right:.30rem !important}
+.mr70{margin-right:.70rem !important}
+.mr140{margin-right:1.4rem !important}
+.mr190{margin-right: 1.9rem!important;}
+.mb0{margin-bottom:0!important}
+.mb5{margin-bottom:.05rem !important}
+.mb10{margin-bottom:.10rem !important}
+.mb15{margin-bottom:.15rem !important}
+.mb20{margin-bottom:.20rem !important}
+.mb30{margin-bottom:.30rem !important}
+.ml0{margin-left:0 !important}
+.ml5{margin-left:.05rem !important}
+.ml10{margin-left:.10rem !important}
+/*.ml15{margin-left:15rem !important}*/
+.ml20{margin-left:.20rem !important}
+.ml25{margin-left:.25rem !important}
+.ml30{margin-left:.30rem !important}
+/*宽度*/
+.W-20{width:20%;}
+.W-25{width:25%;}
+.W-33{width:33.33%;}
+.W-34{width:34%;}
+.W-50{width:50%;}
+.W-100{width:100%;}
+.w-45{width:45px;}
+.w-65{width:65px;}
+/*行高*/
+.lh10{  line-height: .10rem!important;}
+.lh15{  line-height: .15rem!important;}
+.lh18{  line-height: .18rem!important;}
+.lh36{  line-height: .36rem!important;}
+.lh20{  line-height: .20rem!important;}
+.lh30{  line-height: .30rem!important;}
+.lh70{  line-height: .70rem!important;}
+/*高*/
+.h70{  height: 0.7rem!important;}
+/*公共padding*/
+.p0{padding:0 !important;}
+.p5{padding:.05rem !important}
+.p10{padding:.10rem !important}
+.p12{padding:.12rem !important}
+.p15{padding:.15rem !important}
+.p20{padding:.20rem !important}
+.p40{padding:.40rem !important}
+.p30{padding:.30rem !important}
+.pt0{padding-top:0 !important}
+.pt5{padding-top:.05rem !important}
+.pt6{padding-top:.06rem !important}
+.pt10{padding-top:.10rem !important}
+.pt15{padding-top:.15rem !important}
+.pt20{padding-top:.20rem !important}
+.pt25{padding-top:.25rem !important}
+.pt30{padding-top:.30rem !important}
+.pr0{padding-right:0 !important}
+.pr5{padding-right:.05rem !important}
+.pr10{padding-right:0.10rem !important}
+.pr15{padding-right:0.15rem !important}
+.pr20{padding-right:0.20rem !important}
+.pr30{padding-right:0.30rem !important}
+.pr60{padding-right:0.60rem !important}
+.pb0{padding-bottom:0 !important}
+.pb5{padding-bottom:0.04rem !important}
+.pb7{padding-bottom:.07rem !important}
+.pb10{padding-bottom:0.10rem !important}
+.pb15{padding-bottom:0.15rem !important}
+.pb20{padding-bottom:0.20rem !important}
+.pb25{padding-bottom:0.25rem !important}
+.pb30{padding-bottom:0.30rem !important}
+.pl0{padding-left:0 !important}
+.pl5{padding-left:.05rem !important}
+.pl10{padding-left:.10rem !important}
+.pl15{padding-left:.15rem !important}
+.pl20{padding-left:.20rem !important}
+.pl30{padding-left:.30rem !important}
+.pl60{padding-left:.60rem !important}
+.pt10lr0{padding: .10rem 0 !important;}
+.pt10lr0{padding: 0.1rem 0 !important;}
+/*公共字体*/
+.fs10{font-size:.10rem!important}
+.fs11{font-size:.11rem!important}
+.fs12{font-size:.12rem!important}
+.fs13{font-size:.13rem!important}
+.fs22{font-size:.22rem!important}
+.fs26{font-size:.26rem!important}
+.fs14{font-size:.14rem!important}
+.fs15{font-size:.15rem!important}
+.fs16{font-size:.16rem!important}
+.fs17{font-size:.17rem!important}
+.fs18{font-size:.18rem!important}
+.fs20{font-size:.20rem!important}
+.fs24{font-size:.24rem!important}
+.fs28{font-size:.28rem!important}
+.fs29{font-size:.29rem!important}
+.fs32{font-size:.32rem!important}
+.fs38{font-size:.38rem!important}
+.fs84{font-size:.84rem!important}
+.normal{font-weight:normal}
+/*公共边框*/
+.b0{border:0 !important;}
+.bt0{border-top:0}
+.br0{border-right:0}
+.bb0{border-bottom:0}
+.bl0{border-left:0}
+.bbDDDEE3{border-bottom: 1px solid #DDDEE3;  }
+
+/*绿色*/
+.bt-3BBA80{border-top:1px solid #3BBA80;}
+.bt-ffc4a5{border-top:1px solid #ffc4a5;}
+.bt-dddee3{border-top:1px solid #dddee3;}
+/*公共样式*/
+.block{display:block}
+.hide{display:none !important;}
+.iblock{display:inline-block!important}
+.vm{vertical-align:middle}
+.tover{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:150px;}
+.pr{position:relative}
+.pa{position:absolute}
+.pz{position:relative;z-index:9999}
+.flex{display:flex;align-items:center}
+/*公共浮动样式*/
+.fr{float:right !important;}
+.fl{float:left !important;}
+.fn{float: none !important;}
+.clearfix{clear:both;overflow:hidden}
+.clearzoom{*zoom:1;}
+.clearfix:after{content:".";visibility:hidden;display:block;height:0;clear:both}
+.hidden{visibility:hidden}
+.bold{font-weight: bold !important;}
+
+/*公共color*/
+.c-000{color:#000!important}
+.c-222{color:#000!important}
+.c-333{color:#333!important}
+.c-999{color:#999!important}
+.c-ccc{color:#ccc!important}
+.c-fff{color:#fff!important}
+.c-95{color:#95989F!important}
+.c-777{color:#777E8C!important}
+.c-6DC{color:#6DC56E!important}
+.c-fffde3{color:#fffde3!important}
+/*蓝色*/
+.c-395{color:#3395FF!important}
+.c-3395FF{color:#3395FF!important}
+.c-fff600{color:#FFF600!important}
+.c-d8ffed{color:#D8FFED!important}
+.bor-active{border-bottom:2px solid #3395FF}
+/*公共background-color*/
+.bc-fff{background-color:#fff!important}
+.bc-29b375{background-color:#29b375!important}
+.bc-f8{background-color:#F8F8F8!important}
+.bc-f26827{background-color:#f26827!important}
+.bc-ff8f4b{background-color:#ff8f4b!important}
+/*提示文字颜色placeholder*/
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ccc}
+/*公共复选框*/
+.checkbox input:checked+.checkbox-icon:before, .checkbox input:checked:before{background:#2c95fb;border-color:#2c95fb}
+/*公共按钮*/
+/*文字方式*/
+.text-center{text-align: center !important;}
+.text-left{text-align: left !important;}
+.text-right{text-align: right !important;}
+/*box-sizing*/
+.box-size-border{box-sizing:border-box;}
+/*动态经营利润率*/
+.title-bar{
+    position: relative;
+    float: left;
+    height: 0.6rem;
+    width: 100%;
+    background-color: #f8f8f8;
+}
+.title-bar .title-cont {
+    line-height: 0.6rem;
+    font-size: 0.32rem;
+    text-align: center;
+    font-size: 0.32rem;
+}
+.title-bar .back-sub {
+    position: absolute;
+    color: #3395ff;
+    top: 0.2rem;
+    left: 0.3rem;
+}
+.title-bar .close-sub {
+    position: absolute;
+    color: #3395ff;
+    top: 0.2rem;
+    left: 1.06rem;
+}
+/*顶部导航*/
+.top-nav {
+    float: left;
+    width: 100%;
+    height: 0.67rem;
+    background-color: #f8f8f8;
+}
+.top-nav .button {
+    float: left;
+    width: 33.33%;
+    font-size: 0.24rem;
+    text-align: center;
+    line-height: 0.67rem;
+}
+.top-nav .active span {
+    background-color: #F26827;
+    color: #ffffff;
+    border-radius: 0.16rem;
+    padding: 0.02rem 0.15rem;
+}
+/*底部切换*/
+.bot-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    -moz-box-shadow: 0px -1px 0px #ededf0;
+    -webkit-box-shadow: 0px -1px 0px #ededf0;
+    box-shadow: 0px -1px 0px #ededf0;
+    height: 0.88rem;
+    width: 100%;
+}
+
+.bot-nav .button {
+    height: 100%;
+    color: #000000;
+    font-size: 0.28rem;
+    line-height: 0.88rem;
+    float: left;
+    text-align: center;
+    background-color: #fafafa;
+    -moz-box-shadow: -1px 0px 0px #ededf0;
+    -webkit-box-shadow: -1px 0px 0px #ededf0;
+    box-shadow: -1px 0px 0px #ededf0;
+}
+
+.bot-nav .button:first-of-type {
+    box-shadow: none;
+}
+
+.bot-nav .active {
+    background-color: #f1f1f1;
+}
+/*城市项目选择*/
+.item-select {
+    width: 100%;
+    float: left;
+    text-align: left;
+    font-size: 0.3rem;
+}
+.item-select .item-active {
+    color: #3395ff;
+}
+.item-select .li-item {
+    border-top: 1px solid #dddde3;
+}
+.item-select .li-item:last-of-type{
+    border-bottom: 1px solid #dddde3;
+}
+.item-select .item-cont{
+    padding: 0 0.3rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    border-bottom: 1px solid #dddde3;
+}
+
+.item-select .item-class {
+    background-color: #f5f5f5;
+}
+.item-class p:last-of-type {
+    border-bottom: none;
+}
+.item-class p {padding: 0 0.3rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    border-bottom: 1px solid #dddde3;
+}
+
+/*首页表头*/
+.energy-analy {float: left;width: 100%;}
+.energy-analy .bc-29b375 { background-color: #29b375!important;padding: 0 10%;width: 80%;}
+.energy-analy .light{  color: #fff;  }
+.energy-analy .datename {height: 0.3rem;line-height: 0.3rem;}
+.energy-analy .midle .big-number {  font-size: 1.44rem;  height: 1.6rem;  line-height: 1.6rem;  }
+.energy-analy .midle .decimal {  font-size: 0.88rem;  height: 0.84rem;  line-height: 0.84rem;  }
+.energy-analy .midle .percentage {  font-size: 0.44rem;  height: 0.64rem;  line-height: 0.76rem;  }
+.energy-analy .bottom ul {  width: 4.8rem;  border-top: .02rem solid #fff;  padding-top: 0.2rem;  }
+.energy-analy .midle .word {  font-size: .26rem;  position: relative;  bottom: -1.05rem;  left: -.92rem;  }
+.energy-analy .bottom ul li {  line-height: .48rem;  }
+.energy-analy .banner{  width:100%;  overflow: hidden;  position: relative;  }
+
+
+/*第二页表头*/
+.energy-head {float: left;width: 100%;}
+.energy-head .datename {height: 0.3rem;line-height: 0.3rem;}
+.energy-head .energy-head { padding: 0 10%;width: 80%;}
+.energy-head .light{  color: #fff;  }
+.energy-head  .midle .big-number {  font-size: 1.52rem;  height: 1.6rem;  line-height: 1.6rem;  }
+.energy-head  .midle .lv {top:.3rem;right:1.8rem;}
+.energy-head ul.midle-tabs li .top-p {  height: 0.48rem;  line-height: 0.52rem;  }
+.energy-head ul.midle-tabs li .top-b {  height: 0.44rem;  line-height: .38rem;  }
+.energy-head ul.midle-tabs li {  border-right: 0.02rem solid #ffc4a5;  }
+.energy-head .time-dimension .active {  color: #222222!important;  background-color: #F2F2F2!important;  }
+.energy-head .time-dimension .tab {  color: #BBBBBB;  border-radius: 0.02rem;  padding: 0 0.1rem;  height: 0.6rem;  line-height: 0.6rem;  display: block;  margin: 0 auto;  text-align: center;  border: 0.02rem solid #EBEBEB;  }
+/*charts1*/
+.charts {width: 7rem;height: 6rem;float: left;padding:0  0.25rem}
+.charts canvas {width: 100%;height: 100%;}
+/*首页收入支出图表*/
+.incomeExpenditure_echarts{width:100%;height:2.44rem;}
+.rotate{
+    transform:rotate(180deg);
+}
+.h-1{
+    height:.5rem;
+}
+
+
+
+
+.top-nav span {
+    border-radius: 0.16rem;
+    padding: 0.02rem 0.15rem;
+}
+/*头部导航按钮点击切换class*/
+.active0{
+    color:#fff;
+    background:#f26827;
+}
+.active1{
+    color:#fff;
+    background:#f1594b;
+}
+.active2{
+    color:#fff;
+    background:#29b375;
+}
+
+.banner-active0{
+    background:#f26827;
+}
+.banner-active1{
+    background:#f1594b;
+}
+.banner-active2{
+    background:#29b375;
+}
+
+.energy-head ul.midle-tabs li.sub-banner-active0{
+    background:#f77835;
+    border-right-color:#fa9662;
+    border-top-color:#fa9662;
+
+}
+.energy-head ul.midle-tabs li.sub-banner-active1{
+    background:#f76d60;
+    border-right-color:#f9907a;
+    border-top-color:#f9907a;
+
+}
+.energy-head ul.midle-tabs li.sub-banner-active2{
+    background:#3aba7f;
+    border-right-color:#5fc796;
+    border-top-color:#5fc796;
+
+}
+/*表格底部按钮点击展开收缩*/
+.bottom-btn{
+    height:1.28rem;
+    text-align:center;
+    padding-top:0.04rem;
+    box-sizing:border-box;
+    overflow: hidden;
+}
+.bottom-btn span{
+    display:block;
+    margin-top:0.16rem;
+}
+/*图表下面的线条*/
+.line{
+    width:6.22rem;
+    height:0.1rem;
+    background:#eee;
+    margin:0 auto;
+    border-radius:0.05rem;
+    margin-bottom: 0.78rem;
+}
+.line span{
+    height:100%;
+    border-radius:0.05rem;
+}
+.line span.active{
+    background:#d1d1d1;
+}
+
